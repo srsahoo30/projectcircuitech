@@ -9,7 +9,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
       .then(data => {
         const user = data.users.find(user => user.username === username && user.password === password);
         if (user) {
-          window.location.href = '/dashboard';
+            window.location.href = window.location.pathname.replace('index.html', '') + 'dashboard';
         } else {
           document.getElementById('error-message').textContent = 'Invalid username or password';
         }
