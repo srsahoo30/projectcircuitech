@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1><i class="fas fa-chart-line"></i> Sensor Dashboard</h1>
+      <div class="user-info">
+        <span>Welcome, User</span>
+        <button id=logout-btn onclick = "logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </header>
+
+    <div class="sensor-grid">
+      <!-- Temperature Card -->
+      <div class="sensor-card">
+        <div class="card-header">
+          <i class="fas fa-thermometer-half"></i>
+          <h3>Temperature Monitoring</h3>
+        </div>
+        <iframe width="450" height="260" src="https://thingspeak.com/channels/2842270/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&xaxis=Time&yaxis=Temp&yaxismax=50&yaxismin=0"></iframe>
+        <div class="card-footer">
+          <span class="last-updated">Updated: Just now</span>
+          <span class="refresh-btn"><i class="fas fa-sync-alt"></i></span>
+        </div>
+      </div>
+
+      <!-- Humidity Card -->
+      <div class="sensor-card">
+        <div class="card-header">
+          <i class="fas fa-tint"></i>
+          <h3>Humidity Monitoring</h3>
+        </div>
+        <iframe width="450" height="260" src="https://thingspeak.com/channels/2842270/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidity&type=line&xaxis=Time&yaxis=Humidity&yaxismax=100&yaxismin=0"></iframe>
+        <div class="card-footer">
+          <span class="last-updated">Updated: Just now</span>
+          <span class="refresh-btn"><i class="fas fa-sync-alt"></i></span>
+        </div>
+      </div>
+
+      <!-- Distance Card -->
+      <div class="sensor-card">
+        <div class="card-header">
+          <i class="fas fa-ruler"></i>
+          <h3>Distance Monitoring</h3>
+        </div>
+        <iframe width="450" height="260" src="https://thingspeak.com/channels/2842270/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Distance&type=line&xaxis=Time&yaxis=Distance&yaxismax=1194&yaxismin=0"></iframe>
+        <div class="card-footer">
+          <span class="last-updated">Updated: Just now</span>
+          <span class="refresh-btn"><i class="fas fa-sync-alt"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/dashboard.js"></script>
+</body>
+</html>
